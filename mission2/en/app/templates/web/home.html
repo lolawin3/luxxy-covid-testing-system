@@ -1,0 +1,33 @@
+{% extends 'layouts/master.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-5">Luxxy - Luxury Hotels & Resorts</h1>
+        <br>
+        <p>COVID-19 Testing Status System</b></p>
+        <br>
+        <p><a class="btn btn-primary btn-lg" href="{{ url_for('new_record')}}" role="button">Add guest result &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="container" style="text-align: center">
+      <img src="{{ url_for('static', filename='image/hotel.jpg') }}" alt="gov" style="width: 90%;">
+      
+      <hr>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% endblock %}
+<footer class="container">
+	<br>
+	<p>&copy;The Cloud Bootcamp. All rights reserved (Created for educational purporses only - prohibited production)</p>
+</footer>

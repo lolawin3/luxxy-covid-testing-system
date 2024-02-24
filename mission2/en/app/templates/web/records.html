@@ -1,0 +1,41 @@
+{% extends 'layouts/master.html' %}
+{% block title %}Ver{% endblock %}
+{% block body %}
+<h1>Records</h1>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">Guest Name</th>
+			<th scope="col">Home Country</th>
+			<th scope="col">Testing Type</th>
+			<th scope="col">Testing Result</th>
+			<th scope="col">Scanned Result (PDF)</th>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+	{% for record in records %}
+		<tr>
+			<td>{{ record.guest_name }}</td>
+			<td>{{ record.home_country }}</td>
+			<td>{{ record.testing_type }}</td>
+			<td>{{ record.testing_result }}</td>
+			<td><a href="{{ url_for('records_pdf', id=record.id) }}">Link</a></td>
+			<td class="text-right">
+				<div class="row">
+					<form action="{{ url_for('records_delete') }}" method="post" class="pull-right">
+						<input type="hidden" name="id" value="{{ record.id }}">
+						<input type="submit" class="btn btn-danger" data-toggle="confirmation" {# data-title="Are you sure?" #} value="Delete">
+					</form>
+					<a class="btn btn-primary pull-right" href="{{ url_for('edit_record', id=record.id) }}">Edit</a>
+				</div>
+			</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
+<footer class="container">
+	<br>
+	<p>&copy; 2021 The Cloud Bootcamp. All rights reserved (Created for educational purporses only - prohibited production)</p>
+</footer>

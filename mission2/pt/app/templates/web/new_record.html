@@ -1,0 +1,13 @@
+{% extends 'layouts/master.html' %}
+{% block title %}Novo registro{% endblock %}
+{% block body %}
+<h1>Novo registro</h1>
+<form action="{{ url_for('new_record') }}" method="post" enctype="multipart/form-data">
+	{{ generate_fields(form) }}
+	<input type="submit" class="btn btn-success" value="Adicionar">
+</form>
+{% endblock %}
+<footer class="container">
+	<br>
+	<p>&copy; The Cloud Bootcamp. Todos os direitos reservados. (Criado para fins educacionais - proibida a reprodução)</p>
+</footer>
